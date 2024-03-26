@@ -1,3 +1,4 @@
+package Recursion;
 public class Solution{
     public int findPosition(int [] nums, int target){
         return binarySearch(nums, 0, nums.length -1, target);
