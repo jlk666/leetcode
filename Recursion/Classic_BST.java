@@ -1,5 +1,4 @@
-package Recursion;
-public class Solution{
+public class Classic_BST{
     public int findPosition(int [] nums, int target){
         return binarySearch(nums, 0, nums.length -1, target);
     }
