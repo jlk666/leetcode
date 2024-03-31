@@ -27,5 +27,13 @@ class TwoSum_hashMapbased():
         
     def add(self, number):
         self.num_hash[number] = self.num_hash.get(number, 0) + 1 # the 2nd parameter here, if there is no number in the hash, set the value to 0
-                
+    
+    def find(self, target):
+        for num1 in self.num_hash:
+            num2 = target - num1
+            num2_numberNeeded = 2 if num2 == num1 else 1
+            if self.num_hash.get(num2, 0) >= num2_numberNeeded:
+                return True
+            
+        return False
             
