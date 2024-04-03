@@ -7,14 +7,14 @@
 #         self.right = right
 
 class Solution(object):
-    def levelOrder(self, root):
+    def levelOrder_collection_deque(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
         """
         #using queue to store the root node
         queue = collections.deque([root])
-        #base case
+        #base case check if ROOT is empty or not
         if not root:
             return []
         
@@ -29,4 +29,26 @@ class Solution(object):
                         queue.append(node.right)
         return results
             
+            
+    def levelOrder_doublelist(self, root):
+        queue = [root]
+        if not root:
+            return []
+        
+        results = []
+        while queue:
+            next_queue = []
+            results.append([node.val for node in queue])
+            for node in queue:
+                if node.left:
+                    next_queue.append(node.left)
+                if node.right:
+                    next_queue.append(node.right)
+                queue = next_queue
+                
+        return results
+                    
+                
+            
+        
         
