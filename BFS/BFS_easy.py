@@ -6,6 +6,7 @@
 #         self.left = left
 #         self.right = right
 
+# using double list to achieve
 class Solution(object):
     def levelOrder_collection_deque(self, root):
         """
@@ -29,7 +30,8 @@ class Solution(object):
                         queue.append(node.right)
         return results
             
-            
+
+# using double list to achieve 
     def levelOrder_doublelist(self, root):
         queue = [root]
         if not root:
