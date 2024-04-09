@@ -1,4 +1,4 @@
-# leetcode 69
+# leetcode 102 binary tree order traversal
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
@@ -32,7 +32,7 @@ class Solution(object):
             
 
 # using double list to achieve 
-    def levelOrder_doublelist(self, root):
+    def levelOrder_doublelist_doublelist(self, root):
         queue = [root]
         if not root:
             return []
@@ -49,6 +49,33 @@ class Solution(object):
                 queue = next_queue
                 
         return results
+    
+    def levelOrder_dummynode(self, root):
+        if not root:
+            return []
+        
+        queue = collections.deque([root, None])
+        result, level = [], []
+        
+        while queue:
+            node = queue.popleft()
+            if node is None:
+                result.append(level)
+                level = []
+                if queue:
+                    result.append(None)
+                continue
+            level.append(node.val)
+            if node.left:
+                level.append(node.left)
+            if node.right:
+                level.append(node.right)
+    
+        return result    
+            
+            
+        
+        
                     
                 
             
