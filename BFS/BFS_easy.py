@@ -6,7 +6,7 @@
 #         self.left = left
 #         self.right = right
 
-# using double list to achieve
+# using dummyNode to achieve
 class Solution(object):
     def levelOrder_collection_deque(self, root):
         """
