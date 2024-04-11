@@ -63,7 +63,7 @@ class Solution(object):
                 result.append(level)
                 level = []
                 if queue:
-                    result.append(None)
+                    queue.append(None)
                 continue
             level.append(node.val)
             if node.left:
