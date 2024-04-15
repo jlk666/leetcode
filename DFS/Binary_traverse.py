@@ -24,3 +24,11 @@ class Solution(object):
             paths.append(str(root.val)+"->"+path)
 
         return paths
+    
+    def findNode(self, node, nodes):
+        if not node:
+            return 
+        nodes.append(node.val)
+        self.findNode(node.left, nodes)
+        self.findNode(node.right, nodes)
+    
