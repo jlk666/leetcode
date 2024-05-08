@@ -3,7 +3,7 @@ test1 = """{}"""
 def isValidParent(testString):
     stack = []
     for char in testString:
-        if char =='{' or char =='[' or char =='(':
+        if char =='{' or char =='[' or char =='(': #append these char using empty list 
             stack.append(char)
         else:
             if not stack:
