@@ -6,12 +6,12 @@ def isValidParent(testString):
         if char =='{' or char =='[' or char =='(': #append these char using empty list 
             stack.append(char)
         else:
-            if not stack:
+            if not stack: #check if stack is empty 
                 return False
             if (char == '}' and stack[-1] != '{') or (char == ']' and stack[-1] != '[') or (char == '(' and stack[-1] != ')'):
                 return False
-            stack.pop()
-    return not stack
+            stack.pop() 
+    return not stack #true only the stack is empty at the end 
 
 print(isValidParent(test1))
 
