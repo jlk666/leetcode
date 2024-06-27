@@ -12,4 +12,6 @@ class Solution(object):
             res.append(path)
             return
         for letter in self.dict[digits[index]]:
-            self.dfs(digits, index + 1, path + i, res)
+            path.append(letter)
+            self.dfs(digits, index + 1, path , res)
+            path.pop()
